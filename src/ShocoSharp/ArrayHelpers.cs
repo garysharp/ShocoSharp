@@ -65,16 +65,16 @@ namespace ShocoSharp
                     (Buffer[Index + 1] << 16) |
                     (Buffer[Index + 2] << 8) |
                     (Buffer[Index + 3]));
-            else if (Index + 3 < Buffer.Length)
+            else if (Index + 2 < Buffer.Length)
                 return (uint)(
                     (Buffer[Index] << 24) |
                     (Buffer[Index + 1] << 16) |
                     (Buffer[Index + 2] << 8));
-            else if (Index + 2 < Buffer.Length)
+            else if (Index + 1 < Buffer.Length)
                 return (uint)(
                     (Buffer[Index] << 24) |
                     (Buffer[Index + 1] << 16));
-            else if (Index + 1 < Buffer.Length)
+            else if (Index < Buffer.Length)
                 return (uint)(Buffer[Index] << 24);
             else
                 throw new ArgumentOutOfRangeException(nameof(Buffer));
